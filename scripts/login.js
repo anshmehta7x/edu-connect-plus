@@ -68,13 +68,18 @@ function openHomePage(emailaddress) {
 //         }
 //     })
 // })
+
+//newUser.addEventListener('click', () => {
+  //         window.location.href = "createprofile.html";
 // })
 
 document.addEventListener('DOMContentLoaded', () => {
     // ...
-  
+    const newUser = document.querySelector('.login-register');
+    newUser.addEventListener('click', () => {
+      window.location.href = "createprofile.html";
+    });
     const loginForm = document.querySelector('#loginForm');
-    
     loginForm.addEventListener('submit', (event) => {
       event.preventDefault(); // Prevent the default form submission
     
