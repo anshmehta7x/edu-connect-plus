@@ -33,9 +33,11 @@ for i in cur0:
 def getUserInfo(userID):
     cur1.execute("SELECT * from userInfo WHERE userID = ?", (userID,))
     records = cur1.fetchall()
+    print(records)
     dictAll = {}
-    for i in range(0, len(records[0])):
-        dictAll[listColumns[i]] = records[0][i]
+    if(len(records) != 0):
+        for i in range(0, len(records[0])):
+            dictAll[listColumns[i]] = records[0][i]
     return dictAll
 
 #Function to create a record in the database

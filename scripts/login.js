@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.querySelector('#passwordInput');
     const submitButton = document.querySelector('#submitButton');
     const errorLabel = document.querySelector('#errorLabel');
+    const newUser = document.querySelector('.login-register');
 
     submitButton.addEventListener('click', () => {
 
@@ -60,8 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
     )
+
+    newUser.addEventListener('click', () => {
+        window.location.href = "createprofile.html";
 }
 )
 
-    
+})
 

@@ -72,9 +72,10 @@ def delete_user():
     dbconnect.deleteRecord(data['userID'])
     return jsonify({'message': 'User Deleted'}), 201
 
-@app.route('/profile', methods=['GET'])
+@app.route('/getuser', methods=['POST'])
 def get_user():
-    uid = request.args.get('uid')
+    uid = request.json['uid']
+    print(uid)
     info = dbconnect.getUserInfo(uid)
     return jsonify(info), 201
 
