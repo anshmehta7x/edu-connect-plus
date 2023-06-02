@@ -1,15 +1,18 @@
 import mariadb as db
 import sys
+import dotenv
+import os
 
+dotenv.load_dotenv()
 
 #Connect to MariaDB Platform
 try:
     conn = db.connect(
-    user = "2010084_mvs0106",
-    port = 3306,
-    password = "eduConnect+",
-    host = "207.246.248.19",
-    database = "2010084_mvs01062023",
+    user = os.environ.get("DB_USER"),
+    port = int(os.environ.get("DB_PORT")),
+    password = os.environ.get("DB_PASSWORD"),
+    host = os.environ.get("DB_HOST"),
+    database = os.environ.get("DB_NAME"),
     autocommit = True
     )
     print("Connected to MariaDB Platform")
