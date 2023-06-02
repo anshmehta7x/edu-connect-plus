@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     )
     .then(data => {
-        console.log(data);
+        //console.log(data);
     })
     
 
