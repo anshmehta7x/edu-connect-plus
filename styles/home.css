@@ -62,6 +62,10 @@
     font-size: 5vmin;
 }
 
+#logoText{
+    user-select: none;
+}
+
 .valign-text-middle{
     display: flex;
     flex-direction: column;

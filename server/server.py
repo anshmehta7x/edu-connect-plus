@@ -19,6 +19,12 @@ def check_login_details():
     else:
         return jsonify({'status': 'failed'})
 
+@app.route('/getid',methods=['POST'])
+def get_user_id():
+    email = request.json['email']
+    uid = dbconnect.getUserID(email)
+    return jsonify({'uid':uid})
+
 @app.route('/profile', methods=['POST'])
 def create_user():
     data = request.json

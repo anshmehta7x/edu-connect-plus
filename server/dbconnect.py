@@ -107,3 +107,14 @@ def checkEmail(userEmail):
     else:
         print("Email doesn't exist")
         return False
+    
+#Function to get userID from email ID
+def getUserID(userEmail):
+    cur1.execute("SELECT * FROM userInfo WHERE userEmail = ?", (userEmail,))
+    records = cur1.fetchall()
+    if(len(records)!=0):
+        print("User exists")
+        return records[0][0]
+    else:
+        print("User doesn't exist")
+        return False
