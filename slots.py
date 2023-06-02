@@ -112,6 +112,3 @@ def freeslots(timetable):
         
     return freeslotlist
     # returns all free slots in an array, AS THEY ARE IN THE LAB SECTION OF THE TIMETABLE
-    
-
-print(freeslots(testtable2))
