@@ -1,20 +1,23 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import dbconnect
 from slots import freeslots,getsubs
 import json
 
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route('/login', methods=['POST'])
 def check_login_details():
-    email = request.args.get('email')
-    password = request.args.get('password')
+    
+    email = request.json['email']
+    password = request.json['password']
     validity = dbconnect.verifyUser(email,password)
 
     if validity == True:
-        return jsonify({'message': 'Login Successful'}), 201
+        return jsonify({'status': 'success'})
     else:
-        return jsonify({'message': 'Login Failed'}), 401
+        return jsonify({'status': 'failed'})
 
 @app.route('/profile', methods=['POST'])
 def create_user():

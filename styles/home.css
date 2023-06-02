@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:700,600");
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+    font-style: normal;
+}
+
+/* .desktop-1{
+    background-color: #1e1e1e;
+    border: 1px none;
+    display: flex;
+    width: 100%;
+} */
+
+.desktop-1 {
+    min-height: 100vh;
+    width: 100%;
+    background-image:  url('../images/homebg.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* .overlap-group3{
+    align-items: flex-start;
+    background-image: url(images/Minimalist\ bg.jpg);
+    background-position: 50% 50%;
+    display: flex;
+    gap: 427px;
+    height: auto;
+    width: 100%;
+    justify-content: flex-end;
+    min-width: 1083px;
+    padding: 26px 25px;
+} */
+
+
+
+.profile-icon{
+    position: absolute;
+    width: 5vh;
+    height: auto;
+    top: 2.8vh;
+    right: 6vw;
+    height: 3vh;
+}
+
+.profile-text{
+    position: absolute;
+    top: 2.2vh;
+    right: 3.3vw;
+    font-size: 20px;
+}
+
+.edu-connect{
+    position: absolute;
+    left: 2vw;
+    top: 2vh;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vmin;
+}
+
+.valign-text-middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile{
+    font-weight: 600;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    min-width: 60px;
+    text-align: center;
+}
+
+.profile-icon{
+    height: 41px;
+    width: 41px;
+}
+
+.what-are-you-looking-for{
+    font-weight: 700;
+    font-size: 8vmin;
+    position: absolute;
+    top: 20vh;
+    left: 38.5vh;
+    text-align: center;
+}
+
+.overlap-group2{
+    height: 41px;
+    position: relative;
+    width: 180px;
+}
+
+.vertical-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7vw;
+    position: absolute;
+    bottom: 10%;
+    /* justify-content: space-between; */   
+    margin-left: 15vw;
+  }
+
+/* .vertical-buttons {
+    position: absolute;
+    top: 50%;
+    margin-left: 1.5%;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    margin: 10px;
+} */
+
+/* .overlap-group {
+    padding-right: 1vw;
+    background: #D9D9D9;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.25), -5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}  */
+
+.buttonbg {
+    /* padding-left: 1vw; */
+    background: #D9D9D9;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.25), -5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.buddy-image, 
+.mentor-image{
+    height: 30vh;
+    width: auto;
+}
+
+.buddy-text {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.mentor-text {
+font-size: 40px;
+text-align: center;
+padding-bottom: 10px;
+}
+
+.active-buddies,
+.active-mentors {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgba(130, 113, 113, 0.7);
+}

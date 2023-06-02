@@ -84,6 +84,7 @@ def getAllRecords():
     return records
 
 def verifyUser(userEmail, userPassword):
+    print(userEmail, userPassword)
     cur1.execute("SELECT * FROM userInfo WHERE userEmail = ?", (userEmail,))
     records = cur1.fetchall()
     if(len(records)!=0):
