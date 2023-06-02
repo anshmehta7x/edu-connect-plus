@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.querySelector('#emailInput');
     const passwordInput = document.querySelector('#passwordInput');
     const submitButton = document.querySelector('#submitButton');
+    const errorLabel = document.querySelector('#errorLabel');
 
     submitButton.addEventListener('click', () => {
 
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Login successful');
             }
             else{
-                console.error('Login failed');
+                errorLabel.textContent = 'Wrong email or password';
             }
         })
     }
