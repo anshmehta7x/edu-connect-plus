@@ -1,7 +1,8 @@
 import requests
 
-url = 'http://127.0.0.1:5000/api'
+url = 'http://127.0.0.1:5000/login'
 
+#example payload on create new user
 payload = {'firstName':'Aniruddh',
            'lastName':'Chowdhury',
            'userEmail':'anni@gmail.com',
@@ -32,6 +33,7 @@ SUN 	THEORY 	V10 	Y11 	Y12 	X11 	X12 	- 	Lunch 	Y21 	Z21 	X21 	W21 	W22 	- 	V11
 LAB 	L83 	L84 	L85 	L86 	L87 	L88 	Lunch 	L89 	L90 	L91 	L92 	L93 	L94 	-'''
            }
 
+#example payload on create 
 payload1 = {'userID':29,
             'firstName':'chad',
            'lastName':'Chowdhury',
@@ -63,4 +65,6 @@ SUN 	THEORY 	V10 	Y11 	Y12 	X11 	X12 	- 	Lunch 	Y21 	Z21 	X21 	W21 	W22 	- 	V11
 LAB 	L83 	L84 	L85 	L86 	L87 	L88 	Lunch 	L89 	L90 	L91 	L92 	L93 	L94 	-'''
            }
 
-requests.delete(url, json=payload1)
+
+response = requests.put(url, params={'email':'niggas@gmail.com'})
+print(response.status_code)

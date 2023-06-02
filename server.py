@@ -1,12 +1,22 @@
 from flask import Flask, jsonify, request
-from user import User
 import dbconnect
 from slots import freeslots,getsubs
 import json
 
 app = Flask(__name__)
 
-@app.route('/api', methods=['POST'])
+@app.route('/login', methods=['POST'])
+def check_login_details():
+    email = request.args.get('email')
+    password = request.args.get('password')
+    validity = dbconnect.verifyUser(email,password)
+
+    if validity == True:
+        return jsonify({'message': 'Login Successful'}), 201
+    else:
+        return jsonify({'message': 'Login Failed'}), 401
+
+@app.route('/profile', methods=['POST'])
 def create_user():
     data = request.json
     tt = data['timetable']
@@ -26,7 +36,7 @@ def create_user():
     'userPassword':data['userPassword']})
     return jsonify({'message': 'User Created'}), 201
 
-@app.route('/api', methods=['PUT'])
+@app.route('/profile', methods=['PUT'])
 def update_user():
     data = request.json
     tt = data['timetable']
@@ -47,17 +57,26 @@ def update_user():
     'userPassword':data['userPassword']})
     return jsonify({'message': 'User Created'}), 201
 
-@app.route('/api', methods=['DELETE'])
+@app.route('/profile', methods=['DELETE'])
 def delete_user():
     data = request.json
     dbconnect.deleteRecord(data['userID'])
     return jsonify({'message': 'User Deleted'}), 201
 
-@app.route('/api', methods=['GET'])
+@app.route('/profile', methods=['GET'])
 def get_user():
-    #query db and get user object as variable 'user'
-    user = {2:4}
-    return jsonify(user), 201
+    uid = request.args.get('uid')
+    info = dbconnect.getUserInfo(uid)
+    return jsonify(info), 201
+
+@app.route('/login', methods=['PUT'])
+def check_email_existing():
+    email = request.args.get('email')
+    validity = dbconnect.checkEmail(email)
+    if validity == True:
+        return jsonify({'message': 'Email Exists'}), 201
+    else:
+        return jsonify({'message': 'Email Does Not Exist'}), 401
 
 @app.route('/api', methods=['PUT'])
 def send_buddy_request(sender,receiver):

@@ -36,7 +36,6 @@ def getUserInfo(userID):
     dictAll = {}
     for i in range(0, len(records[0])):
         dictAll[listColumns[i]] = records[0][i]
-    print(dictAll)
     return dictAll
 
 #Function to create a record in the database
@@ -83,3 +82,27 @@ def getAllRecords():
     records = cur1.fetchall()
     print(records)
     return records
+
+def verifyUser(userEmail, userPassword):
+    cur1.execute("SELECT * FROM userInfo WHERE userEmail = ?", (userEmail,))
+    records = cur1.fetchall()
+    if(len(records)!=0):
+        if records[0][12] == userPassword:
+            print("Successful Login")
+            return True
+        else:
+            print("Incorrect password")
+            return False
+    else:
+        print("User doesn't exist")
+        return False
+    
+def checkEmail(userEmail):
+    cur1.execute("SELECT * FROM userInfo WHERE userEmail = ?", (userEmail,))
+    records = cur1.fetchall()
+    if(len(records)!=0):
+        print("Email already exists")
+        return True
+    else:
+        print("Email doesn't exist")
+        return False
