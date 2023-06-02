@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 @app.route('/api', methods=['POST'])
 def create_user():
-
     data = request.json
     tt = data['timetable']
     freeSlots = freeslots(tt)
@@ -19,13 +18,40 @@ def create_user():
     'clgBranch':data['clgBranch'],
     'subCode':json.dumps(subs),
     'userGender':data['userGender'],
-    'freeSlots':json.dumps(subs),
+    'freeSlots':json.dumps(freeSlots),
     'lookingForBuddy':data['lookingForBuddy'],
     'lookingToTutor':data['lookingToTutor'],
     'canTutor':json.dumps(data['canTutor']),
     'userEmail':data['userEmail'],
     'userPassword':data['userPassword']})
     return jsonify({'message': 'User Created'}), 201
+
+@app.route('/api', methods=['PUT'])
+def update_user():
+    data = request.json
+    tt = data['timetable']
+    freeSlots = freeslots(tt)
+    subs = getsubs(tt)
+    dbconnect.updateRecord({'userID':data['userID'],
+    'firstName':data['firstName'],
+    'lastName':data['lastName'],
+    'clgYear':data['clgYear'],
+    'clgBranch':data['clgBranch'],
+    'subCode':json.dumps(subs),
+    'userGender':data['userGender'],
+    'freeSlots':json.dumps(freeSlots),
+    'lookingForBuddy':data['lookingForBuddy'],
+    'lookingToTutor':data['lookingToTutor'],
+    'canTutor':json.dumps(data['canTutor']),
+    'userEmail':data['userEmail'],
+    'userPassword':data['userPassword']})
+    return jsonify({'message': 'User Created'}), 201
+
+@app.route('/api', methods=['DELETE'])
+def delete_user():
+    data = request.json
+    dbconnect.deleteRecord(data['userID'])
+    return jsonify({'message': 'User Deleted'}), 201
 
 @app.route('/api', methods=['GET'])
 def get_user():

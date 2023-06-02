@@ -42,7 +42,6 @@ def getUserInfo(userID):
 #Function to create a record in the database
 def createRecord(jsonData):
     listData = tuple(jsonData.values())
-    print(listData)
     
     try:
         cur1.execute("INSERT INTO userInfo (userID, firstName, lastName, clgYear, clgBranch, subCode, userGender, freeSlots, lookingForBuddy, lookingToTutor, canTutor, userEmail, userPassword) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", listData)
