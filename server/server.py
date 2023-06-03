@@ -81,12 +81,12 @@ def get_user():
 
 @app.route('/login', methods=['PUT'])
 def check_email_existing():
-    email = request.args.get('email')
+    email = request.json['email']
     validity = dbconnect.checkEmail(email)
     if validity == True:
-        return jsonify({'message': 'Email Exists'}), 201
+        return jsonify({'exists': 1}), 201
     else:
-        return jsonify({'message': 'Email Does Not Exist'}), 401
+        return jsonify({'exists': 0})
 
 @app.route('/api', methods=['PUT'])
 def send_buddy_request(sender,receiver):

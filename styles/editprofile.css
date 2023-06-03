@@ -10,7 +10,7 @@
 .background-image {
     min-height: 100vh;
     width: 100%;
-    background-image:  url(images/Background\ Image.png);
+    background-image:  url(../images/loginbg.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -323,7 +323,7 @@ nav img{
 .submit-button {
     max-width: 15vw;
     padding-right: 1vw;
-    margin-left: 19vw;
+    margin-left: 16vw;
     margin-top: 12vh;
     padding: 10px 20px;
     background-color: rgb(137, 137, 137);
