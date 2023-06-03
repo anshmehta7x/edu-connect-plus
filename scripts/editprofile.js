@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.querySelector('#emailinp');
         const branch = document.querySelector('#branchcodeinp');
         const passyear = document.querySelector('#passyearinp');
+        let profilepic = document.getElementById("profile-image");
+        let inputfile = document.getElementById("profile-pic-input");
         var searchString = window.location.search;
         var searchParams = new URLSearchParams(searchString);
         var uidValue = searchParams.get('uid');
@@ -78,6 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         })
 
+        inputfile.onchange = function() {
+            profilepic.src = URL.createObjectURL(inputfile.files[0]);
+    
+        }
 
         
 })

@@ -137,7 +137,7 @@ nav img{
 }
 
 .confirm-password-box {
-    width: 19vw
+    width: 19vw;
     height: 5.3vh;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;
@@ -301,10 +301,39 @@ nav img{
     width: 15vw;
     height: 15vw;
     margin-left: 2vw;
-    background: rgba(217, 217, 217, 0.4);
+    /* background: rgba(217, 217, 217, 0.4); */
     border: 2px solid #000000;
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#profile-image {
+    width: 15vw;
+    height: 15vw;
+    object-fit: cover;
+}
+
+#upload-image-button {
+    display: block;
+    width: 15vw;
+    /* padding: 10px 20px; */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 8vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+
+}
+
+#profile-pic-input {
+    display: none;
+
+  }
 
 .user-profile-pic{
     overflow: hidden; /* Clear the float */ 
@@ -318,13 +347,14 @@ nav img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .submit-button {
-    max-width: 15vw;
+    width: 15vw;
     padding-right: 1vw;
     margin-left: 16vw;
-    margin-top: 12vh;
+    margin-top: 5vh;
     padding: 10px 20px;
     background-color: rgb(137, 137, 137);
     color: white;
@@ -346,12 +376,23 @@ nav img{
 
 /* -----DELETE BUTTON----- */
 #deletebtn {
-    max-width: 15vw;
+    /* max-width: 15vw;
     padding-right: 1vw;
     margin-left: 16vw;
     margin-top: 2vh; /* Adjust the margin as per your preference */
+    /* padding: 10px 20px;
+    background-color: rgb(255, 0, 0); Set desired background color */
+    /* color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 25px;  */
+    width: 15vw;
+    padding-right: 1vw;
+    margin-left: 16vw;
+    margin-top: 3vh;
     padding: 10px 20px;
-    background-color: rgb(255, 0, 0); /* Set desired background color */
+    background-color: rgb(255, 0, 0);
     color: white;
     border: none;
     border-radius: 4px;
