@@ -2,7 +2,7 @@ const serverURL = 'http://127.0.0.1:5000';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    var uidValue = localStorage.getItem('uid');
+    var uidValue = parseInt(localStorage.getItem('uid'));
     
     fetch(`${serverURL}/getuser`,{
         method : 'POST',
@@ -24,13 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const profilebtn = document.querySelector('.profile-button');
     profilebtn.addEventListener('click', () => {
-        localStorage.setItem('uid', uidValue);
+        
         window.location.href = "editprofile.html";
     })
 
-
-    
-
-    
-    
 })

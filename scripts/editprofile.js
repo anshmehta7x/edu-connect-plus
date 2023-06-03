@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const passyear = document.querySelector('#passyearinp');
         const timetable = document.querySelector('#timetableinp');
 
-        var uidValue = localStorage.getItem('uid');
+        var uidValue = parseInt(localStorage.getItem('uid'));
         console.log(uidValue);
 
         fetch(`${serverURL}/getuser`,{

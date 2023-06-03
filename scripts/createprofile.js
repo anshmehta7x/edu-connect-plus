@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         .then(data => {
                             console.log('Success:', data);
                             const uid = data['uid'];
-                            window.location.href = "home.html?uid=" + encodeURIComponent(uid);
+                            localStorage.setItem('uid', uid);
+                            window.location.href = "home.html?uid=";
                         })
                     })
                     .catch((error) => {
