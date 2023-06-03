@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const branch = document.querySelector('#branchcodeinp');
     const passyear = document.querySelector('#passyearinp');
     const submitbtn = document.querySelector('#submitbtn');
-
+    let profilepic = document.getElementById("profile-image");
+    let inputfile = document.getElementById("profile-pic-input");
 
     submitbtn.addEventListener('click', function() {
         if (fname.value === '' || lname.value === '' || email.value === '' || password.value === '' || confirmpassword.value === '' || timetable.value === '' || branch.value === '' || passyear.value === '') {
@@ -75,9 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.error('Error:', error);
                     });
                 }
-                })
-            
+            });
         }
     });
-}
-)   
+
+    inputfile.onchange = function() {
+        profilepic.src = URL.createObjectURL(inputfile.files[0]);
+
+    }
+});
+
+
+

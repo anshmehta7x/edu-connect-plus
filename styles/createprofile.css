@@ -301,10 +301,39 @@ nav img{
     width: 15vw;
     height: 15vw;
     margin-left: 2vw;
-    background: rgba(217, 217, 217, 0.4);
+    /* background: rgba(217, 217, 217, 0.4); */
     border: 2px solid #000000;
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#profile-image {
+    width: 15vw;
+    height: 15vw;
+    object-fit: cover;
+}
+
+#upload-image-button {
+    display: block;
+    width: 15vw;
+    /* padding: 10px 20px; */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 8vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+
+}
+
+#profile-pic-input {
+    display: none;
+
+  }
 
 .user-profile-pic{
     overflow: hidden; /* Clear the float */ 
@@ -318,6 +347,7 @@ nav img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .submit-button {
