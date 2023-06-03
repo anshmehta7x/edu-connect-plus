@@ -8,9 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const branch = document.querySelector('#branchcodeinp');
         const passyear = document.querySelector('#passyearinp');
         const timetable = document.querySelector('#timetableinp');
-        var searchString = window.location.search;
-        var searchParams = new URLSearchParams(searchString);
-        var uidValue = searchParams.get('uid');
+
+        var uidValue = localStorage.getItem('uid');
         console.log(uidValue);
 
         fetch(`${serverURL}/getuser`,{
@@ -75,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 console.log(data);
                 alert('Profile Deleted');
+                localStorage.removeItem('uid');
                 window.location.href = 'login.html';
         })
         })

@@ -1,9 +1,8 @@
 const serverURL = 'http://127.0.0.1:5000';
 
 document.addEventListener('DOMContentLoaded', () => {
-    var searchString = window.location.search;
-    var searchParams = new URLSearchParams(searchString);
-    var uidValue = searchParams.get('uid');
+
+    var uidValue = localStorage.getItem('uid');
     
     fetch(`${serverURL}/getuser`,{
         method : 'POST',
@@ -25,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const profilebtn = document.querySelector('.profile-button');
     profilebtn.addEventListener('click', () => {
-        window.location.href = "editprofile.html?uid=" + encodeURIComponent(uidValue);
+        localStorage.setItem('uid', uidValue);
+        window.location.href = "editprofile.html";
     })
 
 

@@ -17,7 +17,8 @@ function openHomePage(emailaddress) {
     .then(data => {
         const uid = data['uid'];
         //console.log(uid);
-        window.location.href = "home.html?uid=" + encodeURIComponent(uid);
+        localStorage.setItem('uid', uid);
+        window.location.href = "home.html";
     })
     
   }
