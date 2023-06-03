@@ -48,11 +48,15 @@ def create_user():
 @app.route('/profile', methods=['PUT'])
 def update_user():
     data = request.json
+    slots = freeslots(data['timetable'])
+    subs = getsubs(data['timetable'])
     dbconnect.updateRecord({'userID':data['uid'],
     'firstName':data['firstName'],
     'lastName':data['lastName'],
     'clgYear':data['clgYear'],
     'clgBranch':data['clgBranch']
+    ,'freeSlots':json.dumps(slots),
+    'subCode':json.dumps(subs)
     })
     return jsonify({'message': 'User Created'}), 201
 

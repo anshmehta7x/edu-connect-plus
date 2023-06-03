@@ -64,7 +64,7 @@ def updateRecord(jsonData):
     # print(listData)
 
     try:
-        cur1.execute("UPDATE userInfo SET firstName = %s, lastName = %s, clgYear = %s, clgBranch = %s WHERE userID = %s", listData)
+        cur1.execute("UPDATE userInfo SET firstName = %s, lastName = %s, clgYear = %s, clgBranch = %s, freeSlots = %s, subCode = %s WHERE userID = %s", listData)
         print("Record updated successfully")
     except db.Error as e:
         print(f"Error: {e}")

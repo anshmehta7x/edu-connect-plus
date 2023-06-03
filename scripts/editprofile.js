@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.querySelector('#emailinp');
         const branch = document.querySelector('#branchcodeinp');
         const passyear = document.querySelector('#passyearinp');
+        const timetable = document.querySelector('#timetableinp');
         var searchString = window.location.search;
         var searchParams = new URLSearchParams(searchString);
         var uidValue = searchParams.get('uid');
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     headers : {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({uid: uidValue, firstName: fname.value, lastName: lname.value, userEmail: email.value, clgBranch: branch.value, clgYear: passyear.value,subCode: data['subCode'], userGender: data['userGender'],freeSlots: data['freeSlots'],lookingForBuddy: data['lookingForBuddy'],lookingToTutor: data['lookingToTutor'],canTutor: data['canTutor']})
+                    body: JSON.stringify({uid: uidValue, firstName: fname.value, lastName: lname.value, userEmail: email.value,timetable:timetable.value ,clgBranch: branch.value, clgYear: passyear.value,subCode: data['subCode'], userGender: data['userGender'],freeSlots: data['freeSlots'],lookingForBuddy: data['lookingForBuddy'],lookingToTutor: data['lookingToTutor'],canTutor: data['canTutor']})
                 })
                 .then(response => {
                     if (!response.ok) {
