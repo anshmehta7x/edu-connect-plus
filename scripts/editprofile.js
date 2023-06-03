@@ -8,9 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const branch = document.querySelector('#branchcodeinp');
         const passyear = document.querySelector('#passyearinp');
         const timetable = document.querySelector('#timetableinp');
-
+        const inputfile = document.getElementById('profile-pic-input');
+        const profilepic = document.getElementById('profile-image');
+    
         var uidValue = parseInt(localStorage.getItem('uid'));
         console.log(uidValue);
+
+        profilepic.src = `../userimages/${uidValue}.jpg`
 
         fetch(`${serverURL}/getuser`,{
             method : 'POST',
@@ -78,6 +82,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'login.html';
         })
         })
+
+        inputfile.onchange = function() {
+            const file = inputfile.files[0];
+            const uid = localStorage.getItem('uid');
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('uid', uid);
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', `${serverURL}/upload`);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    console.log('Image uploaded successfully!');
+                } else {
+                    console.error('Error uploading image:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Error uploading image:', xhr.statusText);
+            };
+            xhr.send(formData);
+            profilepic.src = URL.createObjectURL(file);
+        };
 
 
         
