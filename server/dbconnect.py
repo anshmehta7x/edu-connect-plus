@@ -46,9 +46,10 @@ def getUserInfo(userID):
 #Function to create a record in the database
 def createRecord(jsonData):
     listData = tuple(jsonData.values())
-    
+    # print(listData)
+
     try:
-        cur1.execute("INSERT INTO userInfo (userID, firstName, lastName, clgYear, clgBranch, subCode, userGender, freeSlots, lookingForBuddy, lookingToTutor, canTutor, userEmail, userPassword) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", listData)
+        cur1.execute("INSERT INTO userInfo (userID, firstName, lastName, clgYear, clgBranch, subCode, userGender, freeSlots, lookingForBuddy, lookingToTutor, canTutor, userEmail, userPassword, userTimeTable) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", listData)
         print("Record inserted successfully")
     except db.Error as e:
         print(f"Error: {e}")
@@ -64,11 +65,12 @@ def updateRecord(jsonData):
     # print(listData)
 
     try:
-        cur1.execute("UPDATE userInfo SET firstName = %s, lastName = %s, clgYear = %s, clgBranch = %s, freeSlots = %s, subCode = %s WHERE userID = %s", listData)
+        cur1.execute("UPDATE userInfo SET firstName = %s, lastName = %s, clgYear = %s, clgBranch = %s, freeSlots = %s, subCode = %s, userTimeTable = %s WHERE userID = %s", listData)
         print("Record updated successfully")
     except db.Error as e:
         print(f"Error: {e}")
         sys.exit(1)
+
 
 
 #Function to delete a record in the database
@@ -134,3 +136,20 @@ def imgUID():
         return records[0][0]+1
     else:
         return 1
+    
+
+#Function to get userID, first name, last name, stream and year of all users
+def getAllForProfile():
+    cur1.execute("SELECT userID, firstName, lastName, clgBranch, clgYear, freeSlots FROM userInfo")
+    records = cur1.fetchall()
+    #print(records)
+    return records
+
+def getAllForFilter(year):
+    cur1.execute("SELECT userID, firstName, lastName, clgBranch, clgYear, freeSlots FROM userInfo WHERE clgYear = ?", (year,))
+    records = cur1.fetchall()
+    #print(records)
+    return records
+
+
+

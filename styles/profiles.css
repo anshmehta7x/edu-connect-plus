@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:700,600%22");
+
+body, html {
+    margin: 0;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+  }
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background: url('images/loginbg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.filters {
+    display: flex;
+    margin-left: 2.7vw;
+    height: 5vh;
+    width: 95%;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    align-items: center;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+
+.dropdown-one,
+.dropdown-two,
+.dropdown-three, 
+.dropdown-four {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 10vw;
+    max-height: 23vh;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    color: #000000; /* Text color */
+    font-size: 14px; /* Font size */
+    margin-left: 0.6vw;
+}
+
+.dropdown:hover .dropdown-one,
+.dropdown:hover .dropdown-two,
+.dropdown:hover .dropdown-three,
+.dropdown:hover .dropdown-four {
+    display: block;
+    z-index: 2;
+}
+
+.dropdown-one label,
+.dropdown-two label,
+.dropdown-three label,
+.dropdown-four label {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000; /* Link color */
+}
+  
+.dropdown-one label:hover,
+.dropdown-two label:hover,
+.dropdown-three label:hover,
+.dropdown-four label:hover {
+    background-color: #e4e4e4; /* Hover background color */
+}
+  
+.dropdown-one.show,
+.dropdown-two.show,
+.dropdown-three.show,
+.dropdown-four.show {
+    display: block;
+}
+
+.filters h2{
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 3vw;
+    margin-left: 1vw;
+    color: #443a3a;
+    text-decoration: underline;
+}
+
+.titleOfPage {
+    position: absolute;
+    right: 0.25vw;
+}
+
+.profile-photo {
+    width: 14vw;  /* Adjust the width as needed */
+    height: 30vh;  /* Adjust the height as needed */
+    overflow: hidden;
+    border-radius: 10%;
+    border: 1px solid black;
+    margin-bottom: 0;
+  }
+  
+  .profile-photo img {
+    width: 14vw;
+    height: 30vh;
+    object-fit: cover;
+  }
+
+  .item h3 {
+    color: #e4e4e4;  /* Set the desired text color */
+    font-size: 1.8vw;  /* Adjust the font size as needed */
+  }
+  
+  .item p {
+    color: #e4e4e4;  /* Set the desired text color */
+    font-size: 1.4vw;  /* Adjust the font size as needed */
+    margin: 0.25vh 0;  /* Adjust the margin as needed */
+  }
+
+  
+.outer {
+    position: relative;
+    display: flex;
+    min-height: 75vh;
+    justify-content: flex-end;
+    flex-direction: column; /* added */
+  }
+  
+.row {
+    display: flex;
+    flex: 1; /* added */
+    margin: 0.25vh
+  }
+  
+.item {
+    display: flex;
+    background-color: transparent;
+    border: 0px solid #443a3a;
+    flex: 1;
+    margin: 0.5vh; /* Added margin */
+    border-radius: 2vh;
+    padding: 1vh;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .item:hover .profile-info {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }  
+
+  .profile-info {
+    position: absolute;
+    border-radius: 9%;
+    top: 3vh;
+    left: 2.7vw;
+    width: 14vw;
+    height: 30vh;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #e4e4e4;
+    transition: opacity 0.3s;
+  }
+
+.toggleButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+  }
+
+.button {
+    padding: 1vh 2vw;
+    margin: 1vh;
+    background-color: #443a3a;
+    color: #e4e4e4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 10vw;
+    align-items: center;
+}
+
+.filterButton {
+    padding: 1vh 2vw;
+    margin: 1vh;
+    background-color: transparent;
+    color: #443a3a;
+    border: 1px solid #443a3a;
+    border-radius: 4px;
+    cursor: default;
+    width: 10vw;
+    align-items: center;
+}
+
+.filters .button {
+    padding: 1vh 1vw;
+    margin: 1vh;
+    background-color: #443a3a;
+    color: #e4e4e4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 10vw;
+    align-items: center;
+}
+
+.button p {
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.button:hover {
+    background-color: #e4e4e4;
+    color: #443a3a;
+    transition: 0.3s;
+}
+
+
+  /*Navbar*/
+nav{
+    display: flex;
+    padding: 0% 3%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(223, 223, 223, 0.9);
+    height: 8vh;
+}
+
+nav img{
+    width: 200px;
+    padding-top: 3px;
+    padding-left: 10px;
+    align-items: left;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    text-decoration: none;
+    font-size: 2.9vh;
+    color: #000000;
+}
+
+.nav-links ul li ::after{
+    content: '';
+    display: block;
+    background: #5c5c5c;
+    width: 0%;
+    height: 3px;
+    margin: auto;
+}
+
+.nav-links ul li :hover::after{
+    width: 100%;
+    transition: 0.3s;
+}

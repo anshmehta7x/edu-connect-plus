@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             email.value = data['userEmail'];
             passyear.value = data['clgYear'];
             branch.value = data['clgBranch'];
+            timetable.value = data['userTimeTable'];
 
             const updatebtn = document.querySelector('#updatebtn');
             updatebtn.addEventListener('click', function() {
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(data);
                 alert('Profile Deleted');
                 localStorage.removeItem('uid');
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
         })
         })
 

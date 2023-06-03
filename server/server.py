@@ -79,7 +79,8 @@ def create_user():
     'lookingToTutor':data['lookingToTutor'],
     'canTutor':json.dumps(data['canTutor']),
     'userEmail':data['userEmail'],
-    'userPassword':data['userPassword']})
+    'userPassword':data['userPassword'],
+    'userTimeTable':data['timetable']})
     return jsonify({'message': 'User Created'}), 201
 
 @app.route('/profile', methods=['PUT'])
@@ -93,7 +94,8 @@ def update_user():
     'clgYear':data['clgYear'],
     'clgBranch':data['clgBranch']
     ,'freeSlots':json.dumps(slots),
-    'subCode':json.dumps(subs)
+    'subCode':json.dumps(subs),
+    'userTimeTable':data['timetable']
     })
     return jsonify({'message': 'User Created'}), 201
 
@@ -118,6 +120,24 @@ def check_email_existing():
         return jsonify({'exists': 1}), 201
     else:
         return jsonify({'exists': 0})
+    
+@app.route('/allprofiles', methods = ['GET'])
+def get_data():
+    try:
+        data = dbconnect.getAllForProfile()
+        return jsonify(data)
+    except Exception as e:
+        print(e)
+        return jsonify({'error': 'Error retrieving data from the database'})
+    
+@app.route('/filterprofiles', methods = ['GET'])
+def get_filtered_data():
+    try:
+        data = dbconnect.getAllForFilter()
+        return jsonify(data)
+    except Exception as e:
+        print(e)
+        return jsonify({'error': 'Error retrieving data from the database'})
 
 @app.route('/api', methods=['PUT'])
 def send_buddy_request(sender,receiver):

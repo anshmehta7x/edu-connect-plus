@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8b20015765.js" crossorigin="anonymous"></script>
+    <title>Looking for Buddies</title>
+    <link rel = "stylesheet" href = "styles/profiles.css">
+    <script src = "scripts/profiles.js"></script>
+</head>
+
+<body>
+    <div class = "background">
+        <nav class = "navbar">
+            <a href="index.html"><img src="images/logotransparent.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="filters">
+            <div class="dropdown">
+                <button class="filterButton">Filters:</button>
+            </div>
+            <div class="dropdown">
+                <button class="button">Stream</button>
+                    <div class="dropdown-one">
+                        <label><input type="checkbox" name="stream" value="CSE"> CSE</label>
+                        <label><input type="checkbox" name="stream" value="Mech"> Mech</label>
+                        <label><input type="checkbox" name="stream" value="Civil"> Civil</label>
+                        <label><input type="checkbox" name="stream" value="ECE"> ECE</label>
+                        <label><input type="checkbox" name="stream" value="IT"> IT</label>
+                        <label><input type="checkbox" name="stream" value="Biotech"> Biotech</label>
+                    </div>
+            </div>
+            <div class="dropdown">
+                <button class="button">Free Slots</button>
+                    <div class="dropdown-three">
+                        <label><input type="checkbox" name="stream" value="A1"> A1</label>
+                        <label><input type="checkbox" name="stream" value="A2"> A2</label>
+                        <label><input type="checkbox" name="stream" value="B1"> B1</label>
+                        <label><input type="checkbox" name="stream" value="B2"> B2</label>
+                        <label><input type="checkbox" name="stream" value="C1"> C1</label>
+                        <label><input type="checkbox" name="stream" value="C2"> C2</label>
+                        <label><input type="checkbox" name="stream" value="D1"> D1</label>
+                        <label><input type="checkbox" name="stream" value="D2"> D2</label>
+                        <label><input type="checkbox" name="stream" value="E1"> E1</label>
+                        <label><input type="checkbox" name="stream" value="E2"> E2</label>
+                        <label><input type="checkbox" name="stream" value="F1"> F1</label>
+                        <label><input type="checkbox" name="stream" value="F2"> F2</label>
+                        <label><input type="checkbox" name="stream" value="A1"> A1</label>
+                        <label><input type="checkbox" name="stream" value="A2"> A2</label>
+                        <label><input type="checkbox" name="stream" value="B1"> B1</label>
+                        <label><input type="checkbox" name="stream" value="B2"> B2</label>
+                        <label><input type="checkbox" name="stream" value="C1"> C1</label>
+                        <label><input type="checkbox" name="stream" value="C2"> C2</label>
+                        <label><input type="checkbox" name="stream" value="D1"> D1</label>
+                        <label><input type="checkbox" name="stream" value="D2"> D2</label>
+                        <label><input type="checkbox" name="stream" value="E1"> E1</label>
+                        <label><input type="checkbox" name="stream" value="E2"> E2</label>
+                        <label><input type="checkbox" name="stream" value="F1"> F1</label>
+                        <label><input type="checkbox" name="stream" value="F2"> F2</label>
+                    </div>
+            </div>
+            <div class="dropdown">
+                <button class="button">College Year</button>
+                    <div class="dropdown-four" id="clgYear">
+                        <label><input type="checkbox" class="checkoption" name="year" value="First Year" id="firstYear"> First Year</label>
+                        <label><input type="checkbox" class="checkoption" name="year" value="Second Year" id="secondYear"> Second Year</label>
+                        <label><input type="checkbox" class="checkoption" name="year" value="Third Year" id="thirdYear"> Third Year</label>
+                        <label><input type="checkbox" class="checkoption" name="year" value="Fourth Year" id="fourthYear"> Fourth Year</label>
+                    </div>
+                    <!-- Script -->    
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+
+                        $('.checkoption').click(function() {
+                            $('.checkoption').not(this).prop('checked', false);
+                        });
+                    });
+                    </script>
+            </div>
+        </div>
+
+        <div class="outer">
+            <div class="row">
+                <div class="item">
+                    <div class="profile-photo">
+                        <img src="profile/1.png" alt="Profile Photo">
+                    </div>
+                    <div class="profile-details">
+                        <div class="profile-info">
+                            <h3 id="name1">Name</h3>
+                            <p id="stream1">Stream: CSE</p>
+                            <p id="year1">Year: First Year</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/2.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name2">Name</h3>
+                        <p id="stream2">Stream: CSE</p>
+                        <p id="year2">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/3.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name3">Name</h3>
+                        <p id="stream3">Stream: CSE</p>
+                        <p id="year3">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/4.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name4">Name</h3>
+                        <p id="stream4">Stream: CSE</p>
+                        <p id="year4">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/5.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name5">Name</h3>
+                        <p id="stream5">Stream: CSE</p>
+                        <p id="year5">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/6.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name6">Name</h3>
+                        <p id="stream6">Stream: CSE</p>
+                        <p id="year6">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/7.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name7">Name</h3>
+                        <p id="stream7">Stream: CSE</p>
+                        <p id="year7">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/8.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name8">Name</h3>
+                        <p id="stream8">Stream: CSE</p>
+                        <p id="year8">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/9.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name9">Name</h3>
+                        <p id="stream9">Stream: CSE</p>
+                        <p id="year9">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="profile-photo">
+                    <img src="profile/10.png" alt="Profile Photo">
+                </div>
+                <div class="profile-details">
+                    <div class="profile-info">
+                        <h3 id="name10">Name</h3>
+                        <p id="stream10">Stream: CSE</p>
+                        <p id="year10">Year: First Year</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="toggleButtons">
+            <button a href="#" class="button" id="prevButton"><p>Previous</p></button>
+            <button a href="#" class="button" id="nextButton"><p>Next</p></button>
+        </div>
+    </div>
+</body>
+</html>
