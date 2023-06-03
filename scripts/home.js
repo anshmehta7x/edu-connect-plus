@@ -20,8 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     )
     .then(data => {
-        //console.log(data);
+        console.log(data);
     })
+
+    const profilebtn = document.querySelector('.profile-button');
+    profilebtn.addEventListener('click', () => {
+        window.location.href = "editprofile.html?uid=" + encodeURIComponent(uidValue);
+    })
+
+
     
 
     

@@ -40,7 +40,20 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                window.location.href = "home.html";
+
+                fetch(`${serverURL}/getid`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({'email': email.value}),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    const uid = data['uid'];
+                    window.location.href = "home.html?uid=" + encodeURIComponent(uid);
+                })
             })
             .catch((error) => {
                 console.error('Error:', error);
