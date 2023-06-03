@@ -82,8 +82,8 @@ nav img{
 }
 
 .first-name-box {
-    width: 15vw;
-    height: 4vh;
+    width: 19vw;
+    height: 5.3vh;
     margin-left: 2vw;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;
@@ -91,8 +91,8 @@ nav img{
 }
 
 .last-name-box {
-    width: 15vw;
-    height: 4vh;
+    width: 19vw;
+    height: 5.3vh;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;
     border-radius: 10px;
@@ -128,8 +128,8 @@ nav img{
 }
 
 .enter-password-box {
-    width: 15vw;
-    height: 4vh;
+    width: 19vw;
+    height: 5.3vh;
     margin-left: 2vw;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;
@@ -137,8 +137,8 @@ nav img{
 }
 
 .confirm-password-box {
-    width: 15vw;
-    height: 4vh;
+    width: 19vw
+    height: 5.3vh;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;
     border-radius: 10px;
@@ -175,8 +175,8 @@ nav img{
 }
 
 .passout-year-box {
-    width: 15vw;
-    height: 4vh;
+    width: 19vw;
+    height: 5.3vh;
     margin-left: 2vw;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;
@@ -184,8 +184,8 @@ nav img{
 }
 
 .branch-code-box {
-    width: 15vw;
-    height: 4vh;
+    width: 19vw;
+    height: 5.3vh;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;
     border-radius: 10px;
@@ -219,8 +219,8 @@ nav img{
 }
 
 .email-box {
-    width: 36vw;
-    height: 4vh;
+    width: 40vw;
+    height: 5.3vh;
     margin-left: 2vw;
     background: rgba(217, 217, 217, 0.4);
     border: 2px solid #000000;

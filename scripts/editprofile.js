@@ -35,5 +35,27 @@ document.addEventListener('DOMContentLoaded', function() {
             branch.value = data['clgBranch'];
         })
 
+        const deletebtn = document.querySelector('#deletebtn');
+        deletebtn.addEventListener('click', function() {
+            fetch(`${serverURL}/profile`,{
+                method : 'DELETE',
+                headers : {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({uid: uidValue})
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not OK');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                alert('Profile Deleted');
+                window.location.href = 'login.html';
+        })
+        })
+
         
 })

@@ -69,7 +69,7 @@ def update_user():
 @app.route('/profile', methods=['DELETE'])
 def delete_user():
     data = request.json
-    dbconnect.deleteRecord(data['userID'])
+    dbconnect.deleteRecord(data['uid'])
     return jsonify({'message': 'User Deleted'}), 201
 
 @app.route('/getuser', methods=['POST'])
