@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputfile = document.getElementById('profile-pic-input');
     const profilepic = document.getElementById('profile-image');
 
-    submitbtn.addEventListener('click', function() {
+    submitbtn.addEventListener('click', function(event) {
+        event.preventDefault();
         if (fname.value === '' || lname.value === '' || email.value === '' || password.value === '' || confirmpassword.value === '' || timetable.value === '' || branch.value === '' || passyear.value === '') {
             alert('Please fill all the fields');
         } else if (password.value !== confirmpassword.value) {
@@ -83,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    inputfile.onchange = function() {
+    inputfile.onchange = function(event) {
+        event.preventDefault();
         const file = inputfile.files[0];
         const formData = new FormData();
         formData.append('file', file);

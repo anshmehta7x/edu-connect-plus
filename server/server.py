@@ -19,11 +19,10 @@ def upload():
     if file.filename == '':
         return 'No selected file', 400
 
-    filename = f'{uid}.jpg'  # Set the filename using the uid
-    filepath = f'../userimages/{filename}'  # Set the desired file path
+    filename = f'{uid}.jpg'  # Set the filename using the uid # Set the desired file path
 
     # Save the file to the specified location
-    file.save(filepath)
+    file.save(filename)
     return 'Image uploaded successfully', 200
 
 @app.route('/uploadnew', methods=['POST'])
@@ -37,11 +36,10 @@ def uploadnew():
     if file.filename == '':
         return 'No selected file', 400
 
-    filename = f'{uid}.jpg'  # Set the filename using the uid
-    filepath = f'../userimages/{filename}'  # Set the desired file path
+    filename = f'{uid}.jpg'  # Set the filename using the uid  # Set the desired file path
 
     # Save the file to the specified location
-    file.save(filepath)
+    file.save(filename)
     return 'Image uploaded successfully', 200
 
 @app.route('/login', methods=['POST'])

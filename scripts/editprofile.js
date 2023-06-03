@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         var uidValue = parseInt(localStorage.getItem('uid'));
         console.log(uidValue);
 
-        profilepic.src = `../userimages/${uidValue}.jpg`
-
         fetch(`${serverURL}/getuser`,{
             method : 'POST',
             headers : {
@@ -38,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passyear.value = data['clgYear'];
             branch.value = data['clgBranch'];
             timetable.value = data['userTimeTable'];
+            profilepic.src = `${uidValue}.jpg`
 
             const updatebtn = document.querySelector('#updatebtn');
             updatebtn.addEventListener('click', function() {

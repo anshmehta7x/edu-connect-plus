@@ -1,7 +1,8 @@
 const serverURL = 'http://127.0.0.1:5000';
 
 document.addEventListener('DOMContentLoaded', () => {
-
+    const buddyButton = document.querySelector('.study-buddy-button-v');
+    const tutorButton = document.querySelector('.mentor-button-v');
     var uidValue = parseInt(localStorage.getItem('uid'));
     
     fetch(`${serverURL}/getuser`,{
@@ -20,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     )
     .then(data => {
         console.log(data);
+    })
+
+    buddyButton.addEventListener('click', () => {
+        window.location.href = "profiles.html";
+    })
+
+    tutorButton.addEventListener('click', () => {
+        window.location.href = "profiles.html";
     })
 
     const profilebtn = document.querySelector('.profile-button');

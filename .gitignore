@@ -3,3 +3,4 @@
 .env
 requirements.txt
 userimages/*
+*.jpg
