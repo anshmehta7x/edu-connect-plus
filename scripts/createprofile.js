@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const branch = document.querySelector('#branchcodeinp');
     const passyear = document.querySelector('#passyearinp');
     const submitbtn = document.querySelector('#submitbtn');
-
+    const inputfile = document.getElementById('profile-pic-input');
+    const profilepic = document.getElementById('profile-image');
 
     submitbtn.addEventListener('click', function() {
         if (fname.value === '' || lname.value === '' || email.value === '' || password.value === '' || confirmpassword.value === '' || timetable.value === '' || branch.value === '' || passyear.value === '') {
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             console.log('Success:', data);
                             const uid = data['uid'];
                             localStorage.setItem('uid', uid);
-                            window.location.href = "home.html?uid=";
+                            window.location.href = "home.html";
                         })
                     })
                     .catch((error) => {
@@ -80,5 +81,28 @@ document.addEventListener('DOMContentLoaded', function() {
             
         }
     });
-}
-)   
+
+    inputfile.onchange = function() {
+        const file = inputfile.files[0];
+        const uid = localStorage.getItem('uid');
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('uid', uid);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', `${serverURL}/upload`);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                console.log('Image uploaded successfully!');
+            } else {
+                console.error('Error uploading image:', xhr.statusText);
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Error uploading image:', xhr.statusText);
+        };
+        xhr.send(formData);
+        profilepic.src = URL.createObjectURL(file);
+    };
+    
+    }
+)

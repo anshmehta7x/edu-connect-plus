@@ -7,6 +7,24 @@ import json
 app = Flask(__name__)
 cors = CORS(app)
 
+@app.route('/upload', methods=['POST'])
+def upload():
+    uid = request.form['uid']
+
+    if 'file' not in request.files:
+        return 'No file part in the request', 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return 'No selected file', 400
+
+    filename = f'{uid}.jpg'  # Set the filename using the uid
+    filepath = f'../userimages/{filename}'  # Set the desired file path
+
+    # Save the file to the specified location
+    file.save(filepath)
+    return 'Image uploaded successfully', 200
+
 @app.route('/login', methods=['POST'])
 def check_login_details():
     
