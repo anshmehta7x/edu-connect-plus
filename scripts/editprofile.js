@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const fname = document.querySelector('#fnameinp');
         const lname = document.querySelector('#lnameinp');
         const email = document.querySelector('#emailinp');
-        const timetable = document.querySelector('#timetableinp'); 
         const branch = document.querySelector('#branchcodeinp');
         const passyear = document.querySelector('#passyearinp');
         var searchString = window.location.search;
         var searchParams = new URLSearchParams(searchString);
         var uidValue = searchParams.get('uid');
+        console.log(uidValue);
 
         fetch(`${serverURL}/getuser`,{
             method : 'POST',
@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
         )
         .then(data => {
             console.log(data);
+            fname.value = data['firstName'];
+            lname.value = data['lastName'];
+            email.value = data['userEmail'];
+            passyear.value = data['clgYear'];
+            branch.value = data['clgBranch'];
         })
 
         

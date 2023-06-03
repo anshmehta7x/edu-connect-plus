@@ -312,7 +312,7 @@ nav img{
 }
   
 .profile-pic {
-    margin-top: 18vh;
+    margin-top: 8vh;
     padding-right: 1vw;
     display: flex;
     flex-direction: column;
@@ -341,3 +341,26 @@ nav img{
 .input-box{
     text-indent: 1vw;
 }
+
+/* Rest of the CSS code */
+
+/* -----DELETE BUTTON----- */
+#deletebtn {
+    max-width: 15vw;
+    padding-right: 1vw;
+    margin-left: 16vw;
+    margin-top: 2vh; /* Adjust the margin as per your preference */
+    padding: 10px 20px;
+    background-color: rgb(255, 0, 0); /* Set desired background color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+#deletebtn:hover {
+    background-color: #800000; /* Set desired hover background color */
+}
+
+/* Rest of the CSS code */

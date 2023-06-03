@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/editprofile.css">
+    <script src="scripts/editprofile.js"></script>
     <title>Edit Profile</title>
 </head>
 <body>
@@ -24,35 +25,35 @@
                 <div class="user-name">
                     <div class="first-name">
                         <h2 class="first-name-text">First Name</h2>
-                        <input type="text" class="first-name-box input-box" placeholder=" Enter your First Name" required>
+                        <input type="text" class="first-name-box input-box" placeholder=" Enter your First Name" required id="fnameinp">
                     </div>
                     <div class="last-name">
                         <h2 class="last-name-text">Last Name</h2>
-                        <input type="text" class="last-name-box input-box" placeholder="  Enter your Last Name" required>
+                        <input type="text" class="last-name-box input-box" placeholder="  Enter your Last Name" required id="lnameinp">
                     </div>
                 </div>
                 <div class="college-details">
                     <div class="passout-year">
                         <h2 class="passout-year-text">Passout Year</h2>
-                        <input type="dr" class="passout-year-box input-box" pattern="[1-9]\d{3}" placeholder=" Enter your Passout Year" required>
+                        <input type="dr" class="passout-year-box input-box" pattern="[1-9]\d{3}" placeholder=" Enter your Passout Year" required id="passyearinp">
                     </div>
                     <div class="branch-code">
                         <h2 class="branch-code-text">Branch Code</h2>
-                        <input type="dr" class="branch-code-box input-box" placeholder="  Enter your Branch Code" required>
+                        <input type="dr" class="branch-code-box input-box" placeholder="  Enter your Branch Code" required id="branchcodeinp">
                     </div>
                 </div>
                 <div class="user-email">
                     <div class="email">
                         <h2 class="email-text">Email</h2>
-                        <input readonly type="dr" class="email-box input-box" placeholder="    someone@example.com" required>
+                        <input readonly type="dr" class="email-box input-box" placeholder="    someone@example.com" required id="emailinp">
                     </div>
                 </div>
-                <div class="user-timetable">
+                <!-- <div class="user-timetable">
                     <div class="timetable">
                         <h2 class="timetable-text">Paste Your TimeTable Here</h2>
                         <input type="dr" class="timetable-box input-box" placeholder="    Enter your TimeTable here..." required>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="right-side-of-page">
                 <div class="user-profile-pic">
@@ -61,7 +62,8 @@
                         <div class="profile-pic-box"></div>
                     </div>
                 </div>
-                    <button type="submit" class="submit-button">Update Profile</button>
+                    <button type="submit" class="submit-button" id="updatebtn">Update Profile</button>
+                    <button type="submit" class="submit-button" id="deletebtn">Delete Profile</button>
             </div>
         </div>
     </section>
