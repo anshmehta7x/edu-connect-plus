@@ -1,6 +1,7 @@
 const serverURL = 'http://127.0.0.1:5000';
 
 document.addEventListener('DOMContentLoaded', function() {
+    localStorage.clear();
 
     const fname = document.querySelector('#fnameinp');
     const lname = document.querySelector('#lnameinp');
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         .then(response => response.json())
                         .then(data => {
                             console.log('Success:', data);
-                            const uid = data['uid'];
+                            const uid = data['uid'];                            
                             localStorage.setItem('uid', uid);
                             window.location.href = "home.html";
                         })
@@ -84,12 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     inputfile.onchange = function() {
         const file = inputfile.files[0];
-        const uid = localStorage.getItem('uid');
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('uid', uid);
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', `${serverURL}/upload`);
+        xhr.open('POST', `${serverURL}/uploadnew`);
         xhr.onload = function() {
             if (xhr.status === 200) {
                 console.log('Image uploaded successfully!');

@@ -123,3 +123,14 @@ def getUserID(userEmail):
     else:
         print("User doesn't exist")
         return False
+
+
+#Function to calculate a new UID
+def imgUID():
+    cur1.execute("SELECT userID FROM userInfo ORDER BY userID DESC LIMIT 1")
+    records = cur1.fetchall()
+    print(records)
+    if(len(records)!=0):
+        return records[0][0]+1
+    else:
+        return 1
