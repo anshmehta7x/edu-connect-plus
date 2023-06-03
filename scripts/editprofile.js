@@ -33,6 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
             email.value = data['userEmail'];
             passyear.value = data['clgYear'];
             branch.value = data['clgBranch'];
+
+            const updatebtn = document.querySelector('#updatebtn');
+            updatebtn.addEventListener('click', function() {
+                fetch(`${serverURL}/profile`,{
+                    method : 'PUT',
+                    headers : {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({uid: uidValue, firstName: fname.value, lastName: lname.value, userEmail: email.value, clgBranch: branch.value, clgYear: passyear.value,subCode: data['subCode'], userGender: data['userGender'],freeSlots: data['freeSlots'],lookingForBuddy: data['lookingForBuddy'],lookingToTutor: data['lookingToTutor'],canTutor: data['canTutor']})
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not OK');
+                    }
+                    return response.json();
+                })
+                .then(dat => {
+    
+                    alert('Profile Updated');
+            })
+            })
         })
 
         const deletebtn = document.querySelector('#deletebtn');
@@ -56,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'login.html';
         })
         })
+
 
         
 })
